@@ -1,3 +1,5 @@
+# Running for codechef 0.06 14mb
+
 T = int(input())
 
 for _ in range(T):

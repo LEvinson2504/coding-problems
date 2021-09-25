@@ -1,19 +1,22 @@
+# second try at this problem
+
 T = int(input())
 
 for _ in range(T):
-    n, k = map(int, input().split(" "))
-    q = list(map(int, input().split()))
+    N, K = map(int, input().split(" "))
+    q = list(map(int, input().split(" ")))
 
-    # Sort the scores
     q.sort(reverse=True)
+    benchmark = q[K-1]
 
-    # Eliminate based on k Round A
-    # find the score of team at k, eliminate the rest
-    bench = q[k]
-    # print(bench)
+    i = count = 0
 
-    count = 0
-    for i in q:
-        if i >= bench:
+    try:
+        while(q[i] >= benchmark):
             count += 1
+            i += 1
+
+    except IndexError:
+        pass
+
     print(count)
